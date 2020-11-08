@@ -5,13 +5,23 @@ const Dish = ({response}) => {
     const {dispatch} = useContext(DishContext);
 
     return(
-        <div>
-            <h2>{response.id}</h2>
-            <p>{response.name}</p>
-            <p>{response.type}</p>
-            <p>{response.preparation_time}</p>
-            <p>{response.diameter}</p>
-            <button onClick={(()=>{dispatch({set: 'REMOVE_DISH', name: response.name})})}>X</button>
+        <div className="card">
+            <h3>ID: {response.id}</h3>
+            <p>Name: {response.name}</p>
+            <p>Type: {response.type}</p>
+            <p>Prep time: {response.preparation_time}</p>
+            {response.diameter ? (
+                <div>
+                    <p>Diameter: {response.diameter}</p>
+                    <p>No Slices: {response.no_of_slices}</p>
+                </div>
+            ): response.spiciness_scale ? (
+                <p>Spiciness: {response.spiciness_scale}</p>
+            ):(
+                <p>No.Slices Bread: {response.slices_of_bread}</p>
+            )}
+            
+            <button className="delete-button" onClick={(()=>{dispatch({set: 'REMOVE_DISH', name: response.name})})}>X</button>
         </div>
     )
 }

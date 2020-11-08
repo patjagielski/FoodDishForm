@@ -1,0 +1,22 @@
+.card {
+    width: 200px;
+    height: 240px;
+    margin: 20px;
+    padding: $s-size 0 $xxl-size $l-size;
+    background-color: rgb(247, 246, 241);
+    box-shadow: 0 0 12px rgb(63, 63, 63);
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 9px;
+}
+
+p{
+    font-size: large;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

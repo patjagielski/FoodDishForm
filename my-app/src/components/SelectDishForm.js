@@ -69,20 +69,22 @@ const SelectDishForm = () =>{
             <form className="add-dish" onSubmit={handleRequest}>
                 <textarea className="add-dish__input" value={name} onChange={(e) =>setName(e.target.value)} placeholder="Enter Dish name here" required/>
                 <input className="prep-time" onChange={(e) =>setTime(e.target.value)} value={preparation_time} type="time" step='1' required/>
-                <select className="choose-type" onChange={(e) =>setInfo(e.target.value)} value={type} required>
+                <div className="custom-option">
+                <select onChange={(e) =>setInfo(e.target.value)} value={type} required>
                     <option value=''>None</option>
                     <option value='pizza'>Pizza</option>
                     <option value='soup'>Soup</option>
                     <option value='sandwich'>Sandwich</option>
                 </select>
+                </div>
                 {type === 'pizza'  ? (
-                    <div>
-                    <input type='number' placeholder='enter number of slices' value={no_of_slices} onChange={(e) =>setPizzaSlices(e.target.value)}/>
-                    <input type='number' step='0.01' placeholder='enter diameter' value={diameter} onChange={(e) =>setDiameter(e.target.value)}/>
+                    <div className="container--pizza">
+                    <input className="add-dish__input--pizza" type='number' placeholder='enter number of slices' value={no_of_slices} onChange={(e) =>setPizzaSlices(e.target.value)}/>
+                    <input className="add-dish__input--pizza" type='number' step='0.01' placeholder='enter diameter' value={diameter} onChange={(e) =>setDiameter(e.target.value)}/>
                     </div>
                     
                 ) : type === 'soup' ? (
-                    <div>
+                    <div className="custom-option">
                     <select id='spicy_scale' value={spiciness_scale} onChange={(e) =>setSpice(e.target.value)}>
                         <option value=''>-</option>
                         <option value='1'>1</option>
@@ -98,8 +100,8 @@ const SelectDishForm = () =>{
                     </select>
                     </div>
                 ): type === 'sandwich'  ? (
-                    <div>
-                        <input type='number' value={slices_of_bread} onChange={(e) =>setBread(e.target.value)} required ={required}/>
+                    <div className="container--soup">
+                        <input className="add-dish__input--soup" type='number' value={slices_of_bread} placeholder="No. Slices of Bread" onChange={(e) =>setBread(e.target.value)} required ={required}/>
                     </div>
                 ) :( null )}
                         

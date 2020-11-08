@@ -17,8 +17,12 @@ const MyDish = () =>{
                 </div>
             </div>
             <SelectDishForm />
-            
-            <DishList />
+            <div className="container">
+                <h3 className="container__title">Order Reciepts Below:</h3>
+            </div>
+            <div className="wrapper">
+                <DishList />
+            </div>
         </DishContext.Provider>
     );
 }

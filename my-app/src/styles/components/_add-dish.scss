@@ -21,4 +21,12 @@
     font-weight: bold;
     font-size: $l-size;
     text-align: center;
+    &--pizza{
+        @extend .add-dish__input;
+        margin: 0 $l-size $m-size $l-size;
+    }
+    &--soup{
+        @extend .add-dish__input;
+        margin-bottom: $s-size;
+    }
 }
