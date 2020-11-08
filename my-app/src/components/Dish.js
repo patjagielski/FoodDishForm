@@ -6,9 +6,9 @@ const Dish = ({dish}) => {
     return(
         <div>
             <h2>{dish.name}</h2>
-            <p>{dish.information}</p>
-            <p>{dish.time}</p>
-            <button onClick={() => dispatch({type:'REMOVE_DISH', name: dish.name})}>X</button>
+            <p>{dish.type}</p>
+            <p>{dish.preparation_time}</p>
+            <button onClick={() => dispatch({set:'REMOVE_DISH', name: dish.name})}>X</button>
         </div>
     )
 }
