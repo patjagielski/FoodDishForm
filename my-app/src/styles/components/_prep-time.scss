@@ -1,0 +1,20 @@
+.prep-time::-webkit-datetime-edit-ampm-field {
+    display: none;
+}
+input[type=time]::-webkit-clear-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance:none;
+    appearance: none;
+    margin: -10px; 
+}
+.prep-time{
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: $l-size;
+    margin-bottom: $s-size;
+    padding: 2.4rem;
+}

@@ -1,0 +1,16 @@
+.button{
+    background: $blue;
+    border: none;
+    transition-duration: 0.4s;
+    border-bottom: .3rem solid lighten($blue, 10%);
+    color: white;
+    font-weight: bold;
+    font-size: $l-size;
+    margin-bottom: $m-size;
+    padding: 2.4rem;
+    width: 100%;
+   
+}
+.button:hover{
+    background-color: $light-blue; /* Green */
+}

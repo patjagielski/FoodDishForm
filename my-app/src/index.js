@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import MyDish from './components/MyDish';
+import './styles/styles.scss';
+
 
 
 ReactDOM.render(

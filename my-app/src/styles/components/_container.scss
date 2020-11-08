@@ -1,0 +1,13 @@
+.container {
+    text-align: center;
+    margin: 0 100px 0 100px;
+    padding: 0 $m-size;
+}
+
+.container__title{
+    font-weight: bold;
+    font-size: $l-size;
+    margin-bottom: $m-size;
+    // padding: 2.4rem;
+    width: 100%;
+}
