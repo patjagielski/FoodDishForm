@@ -5,7 +5,8 @@ const Dish = ({response}) => {
     const {dispatch} = useContext(DishContext);
 
     return(
-        <div className="card">
+        <div className="card-wrapper">
+            <div className="card">
             <h3>ID: {response.id}</h3>
             <p>Name: {response.name}</p>
             <p>Type: {response.type}</p>
@@ -20,8 +21,10 @@ const Dish = ({response}) => {
             ):(
                 <p>No.Slices Bread: {response.slices_of_bread}</p>
             )}
-            
-            <button className="delete-button" onClick={(()=>{dispatch({set: 'REMOVE_DISH', name: response.name})})}>X</button>
+            </div>
+            <div className="container_delete-buton">
+                <button className="delete-button" onClick={(()=>{dispatch({set: 'REMOVE_DISH', name: response.name})})}>X</button>
+            </div>
         </div>
     )
 }
