@@ -6,11 +6,6 @@ In this application we are using:
   <li>SASS version: 4.14.1</li> 
 </ol>
 
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
