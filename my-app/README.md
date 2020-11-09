@@ -1,10 +1,35 @@
+# [Use the live version here!](https://food-dish-form.herokuapp.com/)
+
 # Frameworks and Libraries used
 In this application we are using:
 <ol>
   <li>Node.js version: 6.12.0</li>
   <li>React.js version: 17.0.1</li>
   <li>SASS version: 4.14.1</li> 
+  <li>Redux </li>
+  <li>Hooks</li>
 </ol>
+
+# How to Send an Order
+<ol>
+  <li>Open application in editor</li>
+  <li>If opened in editor make sure you have node installed, then run command `npm start`</li>
+  <li>Once the application opens input all needed information to deal with an order</li> 
+  <li>Send order to Server as request</li>
+  <li>The response will be handled and added to `Order History`</li>
+  <li>These orders may be deleted.</li>
+</ol>
+
+# How the Order is being Processed
+<ol>
+  <ul>The request is sent as an HTTP Post to the server</ul>
+  <ul>The information is handled there and then is sent back to us</ul>
+  <ul>We receive a 200 status response from the server indicating the information was processed successfully and has been sent back</ul>
+  <ul>Or a 404 status response if are missing some information and the order could not be finished.</ul>
+</ol>
+
+### Note:
+These are NOT the only status responses we may receive from servers, but are the ones we will be focusing on in this application
 
 ## Available Scripts
 
