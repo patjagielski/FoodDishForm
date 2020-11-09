@@ -68,7 +68,7 @@ const SelectDishForm = () =>{
             </div>
             <form className="add-dish" onSubmit={handleRequest}>
                 <textarea className="add-dish__input" value={name} onChange={(e) =>setName(e.target.value)} placeholder="Enter Dish name here" required/>
-                <input className="prep-time" onChange={(e) =>setTime(e.target.value)} value={preparation_time} type="time" step='1' required/>
+                <input className="prep-time" onChange={(e) =>setTime(e.target.value)} value={preparation_time} type="time" step="1" min="0:00:00" max="23:59:59" required/>
                 <div className="custom-option">
                 <select onChange={(e) =>setInfo(e.target.value)} value={type} required>
                     <option value=''>None</option>
