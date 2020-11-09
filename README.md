@@ -1,12 +1,41 @@
-# Getting Started with Create React App
+# [Use the live version here!](https://food-dish-form.herokuapp.com/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frameworks and Libraries used
+In this application we are using:
+<ol>
+  <li>Node.js version: 6.12.0</li>
+  <li>React.js version: 17.0.1</li>
+  <li>SASS version: 4.14.1</li> 
+  <li>Redux </li>
+  <li>Hooks</li>
+</ol>
+
+# How to Send an Order
+<ol>
+  <li>Open application in editor</li>
+  <li>If opened in editor make sure you have node installed, then run command `npm start`</li>
+  <li>Once the application opens input all needed information to deal with an order</li> 
+  <li>Send order to Server as request</li>
+  <li>The response will be handled and added to `Order History`</li>
+  <li>These orders may be deleted.</li>
+</ol>
+
+# How the Order is being Processed
+<ol>
+  <ul>The request is sent as an HTTP Post to the server</ul>
+  <ul>The information is handled there and then is sent back to us</ul>
+  <ul>We receive a 200 status response from the server indicating the information was processed successfully and has been sent back</ul>
+  <ul>Or a 404 status response if are missing some information and the order could not be finished.</ul>
+</ol>
+
+### Note:
+These are NOT the only status responses we may receive from servers, but are the ones we will be focusing on in this application
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,12 +43,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `npm build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +58,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `npm eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
