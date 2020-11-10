@@ -18,7 +18,18 @@
 .container_delete-buton{
     display: flex;
     position: absolute;
-    
+    align-self: center;
+    margin-left: 30px ;
+    width: 100px;
+}
+.container--pizza{
+    text-align: center;
+}
+
+@media(max-width: $desktop-breakpoint){
+    .container--pizza{
+        text-align: center;
+    }
 }
 
 

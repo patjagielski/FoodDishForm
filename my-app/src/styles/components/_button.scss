@@ -12,14 +12,13 @@
    
 }
 .button:hover{
-    background-color: $light-blue; /* Green */
+    background-color: #011556;
 }
 
 .delete-button{
-    align-content: center;
+    text-align: center;
     display: flex;
-    width: 50%;
-    margin-left: 30px;
+    width: 100%;
     padding: 10px 10px 10px 40px;
     background: rgb(134, 33, 33);
     transition: background .3s ease;

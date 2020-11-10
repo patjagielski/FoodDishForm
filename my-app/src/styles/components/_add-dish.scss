@@ -2,20 +2,19 @@
     display: flex;
     flex-direction: column;
     padding: $m-size;
-    margin: 0 400px 0 400px;
+    margin: 0 15% 0 15%;
     border-style: ridge;
     border-width: 10px;
     border-color: gray;
 }
 
 .add-dish__input {
-    background: $dark-blue;
+    background: #011556;;
     border: none;
     color: white;
     border-bottom: 0.3rem solid darken($dark-blue,10%);
     flex-grow: 1;
     margin: 0 0 $s-size 0;
-    // margin-right: $s-size;
     padding: $s-size;
     resize: none;
     font-weight: bold;
@@ -23,10 +22,90 @@
     text-align: center;
     &--pizza{
         @extend .add-dish__input;
-        margin: 0 $l-size $m-size $l-size;
+        margin: 0 $s-size $m-size $s-size;
     }
     &--soup{
         @extend .add-dish__input;
         margin-bottom: $s-size;
     }
+}
+
+
+.prep-time::-webkit-datetime-edit-ampm-field {
+    display: none;
+}
+input[type=time]::-webkit-clear-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance:none;
+    appearance: none;
+    margin: -10px; 
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+ }
+
+.prep-time{
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: $xl-size;
+    margin-bottom: $s-size;
+    padding: 2.4rem;
+}
+
+
+@media(max-width: $desktop-breakpoint){
+
+    
+    
+    
+    .add-dish{
+        display: flex;
+        flex-direction: column;
+        padding: $s-size;
+        border-style: ridge;
+        border-width: 7px;
+        border-color: gray;
+    }
+    .add-dish__input {
+        background: #011556;
+        color: white;
+        border-bottom: 0.3rem solid darken($dark-blue,10%);
+        margin:auto; 
+        margin-bottom: $s-size;
+        padding: $xs-size;
+        resize: none;
+        font-weight: bold;
+        font-size: $l-size;
+        width: 96%;
+    }
+    .prep-time{
+        background-color: black;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: $l-size;
+        margin-bottom: $s-size;
+        padding: $s-size;
+    }
+    .prep-time::-webkit-datetime-edit-ampm-field {
+        display: none;
+    }
+    input[type=time]::-webkit-clear-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        -ms-appearance:none;
+        appearance: none;
+        margin: -10px; 
+    }
+    
+    input[type="time"]::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+     }
+
 }

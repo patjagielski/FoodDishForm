@@ -25,3 +25,12 @@ p{
     font-weight: 500;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+@media(max-width: $desktop-breakpoint){
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        max-width: 60%;
+        margin: 0 auto;
+    }
+}

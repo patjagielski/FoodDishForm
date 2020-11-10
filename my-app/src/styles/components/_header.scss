@@ -2,11 +2,12 @@
     color: white;
     background-color: $off-black;
     margin-bottom: $m-size;
-    padding: $m-size 0;
+    padding: $l-size 0;
+    text-align: center;
 }
 
 .header__title{
-    font-size: $l-size;
+    font-size: $xl-size;
     margin: 0;
 }
 
@@ -17,8 +18,13 @@
 }
 
 
-@media(min-width: $desktop-breakpoint){
+@media(max-width: $desktop-breakpoint){
     .header{
         margin-bottom: $xl-size;
+        text-align: center;
+    }
+    .header__title{
+        font-size: 2.5rem;
+        margin: 0;
     }
 }
