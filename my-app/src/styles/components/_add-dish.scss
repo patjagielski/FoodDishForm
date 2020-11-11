@@ -15,10 +15,9 @@
     border-bottom: 0.3rem solid darken($dark-blue,10%);
     flex-grow: 1;
     margin: 0 0 $s-size 0;
-    padding: $s-size;
     resize: none;
     font-weight: bold;
-    font-size: $l-size;
+    font-size: $xl-size;
     text-align: center;
     &--pizza{
         @extend .add-dish__input;
@@ -60,9 +59,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 @media(max-width: $desktop-breakpoint){
 
-    
-    
-    
     .add-dish{
         display: flex;
         flex-direction: column;

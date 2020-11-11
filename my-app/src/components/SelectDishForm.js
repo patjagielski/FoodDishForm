@@ -4,7 +4,6 @@ import axios from 'axios';
 
 
 const SelectDishForm = () =>{
-    let required = false;
     const {dispatch} = useContext(DishContext);
     const [name, setName] = useState(''); 
     const [type, setInfo] = useState('');
@@ -14,6 +13,21 @@ const SelectDishForm = () =>{
     const [spiciness_scale, setSpice] = useState('');
     const [slices_of_bread, setBread] = useState('');
 
+   const onSliceChange= (e) => {
+        const amount = e.target.value;
+
+        if(!amount || amount.match(/^[0-9]/)) {
+            setPizzaSlices(e.target.value)
+        }
+    };
+
+    const onDiameterChange= (e) => {
+        const amount = e.target.value;
+
+        if(!amount || amount.match(/[+-]?([0-9]*[.])?[0-9]+/)) {
+            setDiameter(e.target.value)
+        }
+    };
 
     const handleRequest = (e) => {
         e.preventDefault();
@@ -28,12 +42,12 @@ const SelectDishForm = () =>{
         }
         axios.post('https://frosty-wood-6558.getsandbox.com:443/dishes', body)
             .then(function(res){
-
                 const response = [{...res.data}]
                 addDish(response);
             })
             .catch(function(err){
                 console.log(err);
+                alert('Order was deleted due to incomplete form.');
             });
             setName('');
             setInfo('');
@@ -44,10 +58,10 @@ const SelectDishForm = () =>{
             }else if(type === 'soup'){
                 setSpice('');
             }else{
-                required = true;
                 setBread('');
             }
     }
+
    function addDish(response){
         dispatch({
             set: 'SEND_REQUEST',
@@ -61,6 +75,7 @@ const SelectDishForm = () =>{
             slices_of_bread: response[0].slices_of_bread
         });
       }
+
     return(
         <div>
             <div className="container">
@@ -78,30 +93,31 @@ const SelectDishForm = () =>{
                 </select>
                 </div>
                 {type === 'pizza'  ? (
+                    
                     <div className="container--pizza">
-                    <input className="add-dish__input--pizza" type='number' placeholder='enter number of slices' value={no_of_slices} onChange={(e) =>setPizzaSlices(e.target.value)}/>
-                    <input className="add-dish__input--pizza" type='number' step='0.01' placeholder='enter diameter' value={diameter} onChange={(e) =>setDiameter(e.target.value)}/>
+                        <input className="add-dish__input--pizza" type='number' placeholder='enter number of slices' value={no_of_slices} onChange={onSliceChange}/>
+                        <input className="add-dish__input--pizza" type='number' step='0.01' placeholder='enter diameter' value={diameter} onChange={onDiameterChange}/>
                     </div>
                     
                 ) : type === 'soup' ? (
                     <div className="custom-option">
-                    <select id='spicy_scale' value={spiciness_scale} onChange={(e) =>setSpice(e.target.value)}>
-                        <option value=''>-</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
-                        <option value='5'>5</option>
-                        <option value='6'>6</option>
-                        <option value='7'>7</option>
-                        <option value='8'>8</option>
-                        <option value='9'>9</option>
-                        <option value='10'>10</option>
-                    </select>
+                        <select id='spicy_scale' value={spiciness_scale} onChange={(e) =>setSpice(e.target.value)}>
+                            <option value=''>-</option>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                            <option value='7'>7</option>
+                            <option value='8'>8</option>
+                            <option value='9'>9</option>
+                            <option value='10'>10</option>
+                        </select>
                     </div>
                 ): type === 'sandwich'  ? (
                     <div className="container--soup">
-                        <input className="add-dish__input--soup" type='number' value={slices_of_bread} placeholder="No. Slices of Bread" onChange={(e) =>setBread(e.target.value)} required ={required}/>
+                        <input className="add-dish__input--soup" type='number' value={slices_of_bread} placeholder="No. Slices of Bread" onChange={(e) =>setBread(e.target.value)} required/>
                     </div>
                 ) :( null )}
                         
