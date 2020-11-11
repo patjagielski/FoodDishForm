@@ -1,15 +1,13 @@
 .card-wrapper {
-    width: 200px;
-    height: 240px;
+    flex: 100%;
     margin: 20px 0 $xxl-size $l-size;
-    padding: $s-size 0 $xxl-size $l-size;
+    padding: $s-size $s-size $xxl-size $l-size;
     background-color: rgb(247, 246, 241);
     box-shadow: 0 0 12px rgb(63, 63, 63);
 }
 
 .card {
-    width: 200px;
-    height: 240px;
+    width: 250px;
 }
 
 .wrapper{
@@ -21,6 +19,7 @@
 }
 
 p{
+    overflow-wrap: break-word;
     font-size: large;
     font-weight: 500;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

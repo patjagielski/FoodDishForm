@@ -46,8 +46,9 @@ const SelectDishForm = () =>{
                 addDish(response);
             })
             .catch(function(err){
-                console.log(err);
-                alert('Order was deleted due to incomplete form.');
+                // console.log(err);
+                alert(`Your Order was missing or had incorrect information. \n Please resend order with all fields complete.
+                        \n ${err}`);
             });
             setName('');
             setInfo('');

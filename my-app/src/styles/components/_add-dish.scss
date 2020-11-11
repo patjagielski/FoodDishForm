@@ -10,6 +10,8 @@
 
 .add-dish__input {
     background: #011556;;
+    // word-break: anywhere;
+    overflow-wrap: break-word;
     border: none;
     color: white;
     border-bottom: 0.3rem solid darken($dark-blue,10%);
